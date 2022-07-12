@@ -10,6 +10,8 @@ resource "aws_iam_role" "this" {
   description           = var.description
   force_detach_policies = var.force_detach_policies
   assume_role_policy    = data.aws_iam_policy_document.this.json
+
+  tags = var.tags
 }
 
 data "aws_iam_policy_document" "this" {

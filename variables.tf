@@ -23,10 +23,15 @@ variable "force_detach_policies" {
 
 variable "policy_arn" {
   description = "Attache the policies to the IAM Role."
-  type        = list
+  type        = list(any)
 }
 
 variable "depend_on" {
   type    = any
   default = null
+}
+
+variable "tags" {
+  description = "The tags of the IAM Role."
+  type        = map(string)
 }
